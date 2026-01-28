@@ -95,3 +95,4 @@ D:\my-details\edu\Working Projects\.net\CustomerManagementSystem\obj\Debug\net10
 D:\my-details\edu\Working Projects\.net\CustomerManagementSystem\obj\Debug\net10.0\CustomerManagementSystem.pdb
 D:\my-details\edu\Working Projects\.net\CustomerManagementSystem\obj\Debug\net10.0\CustomerManagementSystem.genruntimeconfig.cache
 D:\my-details\edu\Working Projects\.net\CustomerManagementSystem\obj\Debug\net10.0\ref\CustomerManagementSystem.dll
+D:\my-details\edu\Working Projects\.net\CustomerManagementSystem\obj\Debug\net10.0\CustomerManagementSystem.sourcelink.json
