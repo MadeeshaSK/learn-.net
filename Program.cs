@@ -4,7 +4,7 @@ using Microsoft.Extensions.Logging;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Remove all default logging except our manual Console.WriteLine
+// Remove all default logging 
 builder.Logging.ClearProviders();
 builder.Logging.AddFilter("Microsoft", LogLevel.None);
 builder.Logging.AddFilter("System", LogLevel.None);
@@ -40,7 +40,25 @@ using (var scope = app.Services.CreateScope())
 
 // Configure middleware / request pipeline
 app.UseHttpsRedirection();
-app.UseStaticFiles();
+
+//Disable caching for static files in development
+if (app.Environment.IsDevelopment())
+{
+    app.UseStaticFiles(new StaticFileOptions
+    {
+        OnPrepareResponse = ctx =>
+        {
+            ctx.Context.Response.Headers.Append("Cache-Control", "no-cache, no-store, must-revalidate");
+            ctx.Context.Response.Headers.Append("Pragma", "no-cache");
+            ctx.Context.Response.Headers.Append("Expires", "0");
+        }
+    });
+}
+else
+{
+    app.UseStaticFiles();
+}
+
 app.UseRouting();
 app.UseAuthorization();
 

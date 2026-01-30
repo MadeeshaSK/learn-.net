@@ -1,3 +1,4 @@
+// Controllers/CustomerController.cs
 using Microsoft.AspNetCore.Mvc;
 using CustomerManagementSystem.Data;
 using CustomerManagementSystem.Models;

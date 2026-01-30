@@ -1,3 +1,4 @@
+//wwwroot/js/customer.js
 $(document).ready(function() {
     console.log('Customer page loaded');
     
@@ -74,14 +75,50 @@ $(document).ready(function() {
         };
 
         // Validation
+        //name
         if (!customer.Name) {
-            alert('Please enter a name');
+            alert('Name is required');
             $('#name').focus();
             return;
         }
+        if (customer.Name.length < 2) {
+            alert('Name must be more than 2 letters');
+            $('#name').focus();
+            return;
+        }
+        if (!/^[a-zA-Z\s]+$/.test(customer.Name)) {
+            alert('Name can only contain letters and spaces');
+            $('#name').focus();
+            return;
+        }
+        //email
         if (!customer.Email) {
             alert('Please enter an email');
             $('#email').focus();
+            return;
+        }
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(customer.Email)) {
+            alert('Please enter a valid email (e.g., user@example.com)');
+            $('#email').focus();
+            return;
+        }
+        //phone
+        if (customer.Phone) {
+            if (!/^\d+$/.test(customer.Phone)) {
+                alert('Phone can only contain numbers');
+                $('#phone').focus();
+                return;
+            }
+            if (customer.Phone.length < 8) {
+                alert('Phone must be more than 8 numbers');
+                $('#phone').focus();
+                return;
+            }
+        }
+        //birthday
+        if (!customer.Birthday) {
+            alert('Birthday is required');
+            $('#birthday').focus();
             return;
         }
 

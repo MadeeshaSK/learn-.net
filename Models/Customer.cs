@@ -1,3 +1,4 @@
+// Models/Customer.cs
 using System.ComponentModel.DataAnnotations;
 
 namespace CustomerManagementSystem.Models
