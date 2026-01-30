@@ -1,4 +1,4 @@
-// File: Models/Data/ApplicationDbContext.cs
+// Models/Data/ApplicationDbContext.cs
 using Microsoft.EntityFrameworkCore;
 using CustomerManagementSystem.Models;
 
